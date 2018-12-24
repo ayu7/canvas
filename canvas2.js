@@ -1,7 +1,7 @@
 var box= document.getElementById("box");
 var boxy=box.getContext("2d");
 var stop=document.getElementById("stop");
-var clear=document.getElementByID("button");
+var clear=document.getElementById("button");
 var requestID;
 boxy.fillStyle="red";
 
@@ -21,7 +21,7 @@ var animate=function(){
 	boxy.fill();
 
 	xcor++;
-	
+
 	requestID=window.requestAnimationFrame(drawDot);
     };
 
@@ -33,14 +33,12 @@ var stopIt=function(){
     window.cancelAnimationFrame(requestID);
 };
 
-var clear= function(e){
+var clearIt = function(e){
   e.preventDefault();
   boxy.clearRect(0, 0, 500, 500);
   boxy.beginPath();
 };
 
 stop.addEventListener("click", stopIt);
-clear.addEventListener("click", clear);
+clear.addEventListener("click", clearIt);
 box.addEventListener("click", animate);
-
-
